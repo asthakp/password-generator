@@ -60,6 +60,7 @@ p {
   border: none;
   border-radius: 6px;
   margin-top: 10px;
+  padding-left: 10px;
 }
 .password-buttons {
   display: flex;

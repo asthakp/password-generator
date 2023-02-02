@@ -6,18 +6,26 @@ let pwTwo=document.getElementById("pw-two")
 
 
 generatePw.addEventListener("click", ()=>{
-    pwOne.textContent=""
-    pwTwo.textContent=""
+    pwOne.value=""
+    pwTwo.value=""
     for(let i=0; i<=15; i++){
         let a=Math.floor(Math.random()*characters.length)
         let b=Math.floor(Math.random()*characters.length)
-        pwOne.textContent+=characters[a]
-        pwTwo.textContent+=characters[b]
+        pwOne.value+=characters[a]
+        pwTwo.value+=characters[b]
         pwOne.style.color="white"
         pwTwo.style.color="white"
     }   
 }
-
-
 )
 
+pwOne.addEventListener("click", ()=>{
+    pwOne.select()
+    navigator.clipboard.writeText(pwOne.value)
+    alert("Password copied")
+})
+pwTwo.addEventListener("click", ()=>{
+    pwTwo.select()
+    navigator.clipboard.writeText(pwTwo.value)
+    alert("Password copied")
+})
